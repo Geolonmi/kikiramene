@@ -20,7 +20,8 @@ namespace KiKiRamene.Pages
             "Fabien",
             "Séverine",
             "Romain",
-            "Geoffroy"
+            "Geoffroy",
+            "Sylvain"
         };
 
         public DateTime Date { get; set; }
