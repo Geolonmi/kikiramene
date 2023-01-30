@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var date = DateTime.Parse(ViewData["date"].ToString()).Date.ToString("d/M/yyyy");
+}
+
+<div class="text-center">
+    <h1>Qui ramène un petit truc à grignoter pour la fin du sprint du @date ?</h1>
+    <h3>
+        Les dieux du clic-clic ont décidé que ce sera <b>@ViewData["winner"]</b>
+    </h3>
+</div>
+

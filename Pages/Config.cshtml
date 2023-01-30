@@ -1,0 +1,10 @@
+﻿@page
+@model KiKiRamene.Pages.ConfigModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<form method="post">
+    Prochaine date:
+    <input asp-for="Config!.Date" />
+    <input asp-for="Config!.Secret" />
+    <input type="submit" />
+</form>
