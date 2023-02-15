@@ -21,8 +21,10 @@ namespace KiKiRamene.Pages
 
                 var text = System.IO.File.ReadLines(path);
                 var infos = text.LastOrDefault()?.Split("-");
-                ViewData["winner"] = infos[1];
+                ViewData["winner"] = infos![1];
                 ViewData["date"] = infos[0];
+
+                ViewData["historique"] = text.ToArray()[0..(text.Count() - 1)];
 
             }
             catch (IOException e)
