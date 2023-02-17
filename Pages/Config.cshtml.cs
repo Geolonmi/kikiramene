@@ -16,7 +16,7 @@ namespace KiKiRamene.Pages
             "Hugues",
             "Julien",
             "Stephane",
-            "Arnaud",
+            "Fanny",
             "Fabien",
             "Séverine",
             "Romain",
