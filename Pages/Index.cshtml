@@ -141,7 +141,7 @@
                                 @foreach (var item in (string[])(ViewData["historique"]!))
                                 {
                                     <li class="event" data-date="@DateTime.Parse(item.Split("-")[0]).ToString("d")">
-                                        <h3>Ce jour la, c'est <b>@item.Split("-")[1]</b> qui nous a régalé ! </h3>
+                                        <h3>Ce jour la, c'est <b>@item.Split("-")[1]</b> qui nous a régalé ! Merci <b>@item.Split("-")[1]</b> !</h3>
                                     </li>
                                 }
                             </ul>
