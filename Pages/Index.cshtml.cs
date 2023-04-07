@@ -1,30 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace KiKiRamene.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+        public IndexModel()
+        { }
 
         public void OnGet()
         {
-
             try
             {
                 string path = "history.txt";
+                var records = System.IO.File.ReadLines(path)?.Select(s =>
+                {
+                    var infos = s.Split("-");
+                    return new Record
+                    {
+                        Date = DateTime.Parse(infos![0]),
+                        Name = infos![1]
+                    };
+                });
 
-                var text = System.IO.File.ReadLines(path);
-                var infos = text.LastOrDefault()?.Split("-");
-                ViewData["winner"] = infos![1];
-                ViewData["date"] = infos[0];
-
-                ViewData["historique"] = text.ToArray()[0..(text.Count() - 1)];
+                var current = records?.LastOrDefault();
+                ViewData["current"] = current;
+                ViewData["historique"] = (records?.Any() ?? false) ? records.Take(records.Count() - 1).Reverse().ToArray() : Array.Empty<Record>();
 
             }
             catch (IOException e)
