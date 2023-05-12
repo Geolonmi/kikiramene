@@ -1,13 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 
 namespace KiKiRamene.Pages
 {
     public class ConfigModel : PageModel
     {
 
-        public ConfigModel()
+        private IConfiguration _configuration { get; }
+
+
+        public ConfigModel(IConfiguration configuration)
         {
+            _configuration= configuration;
         }
 
         private string[] participants = new string[] {
@@ -41,7 +46,7 @@ namespace KiKiRamene.Pages
                 return Page();
             }
 
-            if(Config?.Secret != "SECRET")
+            if(Config?.Secret != _configuration["PRIVATE_KEY"])
             {
                 return Page();
             }
