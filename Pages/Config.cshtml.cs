@@ -20,7 +20,7 @@ namespace KiKiRamene.Pages
             "Omar",
             "Hugues",
             "Julien",
-            "Stephane",
+            "Stefan",
             "Fanny",
             "Fabien",
             "Séverine",
