@@ -123,7 +123,7 @@
 </style>
 
 <div class="text-center">
-    <h1>Qui ramène un petit truc à grignoter pour la fin du sprint du @(currentRecord?.Date.ToString("MM/dd/yyyy")) ?</h1>
+    <h1>Qui ramène un petit truc à grignoter pour la fin du sprint du @(currentRecord?.Date.ToString("dd/MM/yyyy")) ?</h1>
     <h3>
         Les dieux du clic-clic ont décidé que ce sera <b>@(currentRecord?.Name)</b>
     </h3>
@@ -141,7 +141,7 @@
                             <ul class="timeline">
                                 @foreach (var item in records)
                                 {
-                                    <li class="event" data-date="@item.Date.ToString("MM/dd/yyyy")">
+                                    <li class="event" data-date="@item.Date.ToString("dd/MM/yyyy")">
                                         <h3>Ce jour la, c'est <b>@item.Name</b> qui nous a régalé ! Merci <b>@item.Name</b> !</h3>
                                     </li>
                                 }
